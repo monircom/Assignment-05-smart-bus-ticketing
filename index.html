@@ -1,11 +1,121 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bus Ticketing</title>
+    <!-- tailwind and daisy UI -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.6.0/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/d7b7563d24.js" crossorigin="anonymous"></script>
+    <!-- tailwind custom color -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'red-color': '#FF4240',
+                        'black-color': '#030712'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .font-raleway {
+            font-family: 'Raleway', sans-serif;
+        }
+
+        .font-inter {
+            font-family: "Inter", sans-serif;
+        }
+    </style>
 </head>
-<body>
-    
+
+<body class="font-raleway">
+
+    <header class="max-w-[1440px] mx-auto px-4">
+        <nav class="max-w-[1170px] mx-auto mt-12 mb-8">
+            <div class="navbar p-0 bg-base-100">
+                <!-- small device -->
+                <div class="navbar-start">
+                    <div class="dropdown">
+                        <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h8m-8 6h16" />
+                            </svg>
+                        </div>
+                        <ul tabindex="0"
+                            class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                            <li><a>Home</a></li>
+                            <li><a>About</a></li>
+                            <li><a>Destination</a></li>
+                            <li><a>Search</a></li>
+                        </ul>
+                    </div>
+                    <a class="btn btn-ghost font-raleway text-2xl lg:text-4xl font-extrabold text-black-color">P-Ticket</a>
+                </div>
+                <!-- large device -->
+                <div class="navbar-center hidden lg:flex">
+                    <ul class="menu menu-horizontal lg:text-lg px-1">
+                        <li><a>Home</a></li>
+                        <li><a>About</a></li>
+                        <li><a>Destination</a></li>
+                        <li><a>Search</a></li>
+                    </ul>
+                </div>
+                <div class="navbar-end">
+                    <a
+                        class="btn bg-[rgba(29,209,0,0.1)] text-[rgb(29,209,0)] border-[rgba(29,209,0,0.4)] font-raleway lg:text-xl">Bus
+                        <img src="./images/bus-icon.png" alt=""></a>
+                </div>
+            </div>
+        </nav>
+        <!-- banner section -->
+
+        <!-- linear-gradient(180deg, rgba(3, 7, 18, 0.50) 0%, rgba(3, 7, 18, 0.00) 100%), url(<path-to-image>), lightgray 50% / cover no-repeat;
+            bg-[linear-gradient(180deg,rgba(3,7,18,0.5),rgba(3,7,18,0)100%),url('/images/banner.png')]
+            bg-[linear-gradient(180deg,rgba(3,7,18,0.5),rgba(3,7,18,0)100%),url('./images/banner.png')]
+
+Rectangle 3
+Image · 2,000 x 1,333
+1x
+ -->
+        <div class="max-w-[1170px] mx-auto">
+            <div class="bg-[linear-gradient(180deg,rgba(3,7,18,0.1)0%,rgba(3,7,18,0)100%),url('./images/banner.png')]
+            bg-cover bg-no-repeat rounded-[32px] flex flex-col items-center lg:h-[550px] mb-20 lg:mb-[190px]">
+                <h1 class="text-white text-4xl/[86px] lg:text-[64px] text-center font-extrabold mt-[35px] lg:mt-[70px]">
+                    End-to-End Travel with
+                    <br><span class="text-[#1DD100]">P Paribahan</span>
+                </h1>
+                <p class="text-white lg:text-lg lg:w-[691px] text-center my-2 lg:my-4">You can find the cheapest bus
+                    tickets
+                    by comparing
+                    prices from different bus companies and booking in advance.</p>
+                <button
+                    class="btn mt-2 mb-[130px] lg:mt-4 bg-[#1DD100] border-none text-black-color text-xl font-bold">Buy
+                    Tickets</button>
+            </div>
+        </div>
+
+
+
+
+        <main></main>
+
+
 </body>
+
 </html>
