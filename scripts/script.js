@@ -12,7 +12,7 @@ for (const ticketBtn of allTicketBtn) {
         "total-cost",
         document.getElementById("ticket-price").innerText
       );
-      
+
       const placeName = e.target.innerText;
       const price = document.getElementById("ticket-price").innerText;
       const selectedContainer = document.getElementById("selected-place-container");
@@ -42,7 +42,7 @@ for (const ticketBtn of allTicketBtn) {
 
     //const seat = parseInt(document.getElementById("total-seats-left").innerText);
 
-    if (totalSeats > 3) {
+    if (totalTicketSelected > 3) {
       document.getElementById("discount-btn").removeAttribute("disabled");
     } else {
       document.getElementById("discount-btn").setAttribute("disabled", true);
