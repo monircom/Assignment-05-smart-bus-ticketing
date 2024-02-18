@@ -41,10 +41,10 @@ for (const ticketBtn of allTicketBtn) {
     setElementValueById("seat-count", totalTicketSelected);
     setElementValueById("total-seats-left", totalSeats );
     setElementValueById("grand-total", parseInt(document.getElementById("total-cost").innerText));
-   // grandTotal();
+ 
 
-    const seat = parseInt(document.getElementById("seat-count").innerText);
-    if (seat > 3) {
+    //const seat = parseInt(document.getElementById("seat-count").innerText);
+    if (totalSeats > 3) {
       document.getElementById("discount-btn").removeAttribute("disabled");
     } else {
       document.getElementById("discount-btn").setAttribute("disabled", true);
@@ -55,7 +55,7 @@ for (const ticketBtn of allTicketBtn) {
       .addEventListener("keyup", function (event) {
         const text = event.target.value.toString().length;
         const button = document.getElementById("modal-btn");
-        if (text > 0 && seat > 0) {
+        if (text > 0 && totalSeats > 0) {
           button.removeAttribute("disabled");
         } else {
           button.setAttribute("disabled", true);
@@ -64,37 +64,31 @@ for (const ticketBtn of allTicketBtn) {
   });
 }
 
-function grandTotal() {
-  //const totalCost = document.getElementById("total-cost").innerText;
-  //const totalCost = parseInt(document.getElementById("total-cost").innerText);
-  //const convertedTotalCost = parseInt(totalCost);
-  
-
-
-
-}
 
 const btn2 = document.getElementById("discount-btn");
 btn2.addEventListener("click", function () {
   const couponElement = getInputValueById("input-coupon");
   if (couponElement === "NEW15") {
     const grandTotal = document.getElementById("total-cost").innerText;
-    const convertedTotalCost = parseInt(grandTotal);
-    const discount = convertedTotalCost * 0.15;
-    const newGrandTotal = convertedTotalCost - discount;
+    const grandTotalCost = parseInt(grandTotal);
+    const discount = grandTotalCost * 0.15;
+    const newGrandTotal = grandTotalCost - discount;
+
     setElementValueById("grand-total", newGrandTotal);
-    //document.getElementById("coupon").className = "hidden";
+    
     document.getElementById("coupon").classList.add("hidden"); 
 
   } else if (couponElement === "Couple 20") {
     
     const grandTotal = document.getElementById("total-cost").innerText;
-    const convertedTotalCost = parseInt(grandTotal);
-    const discount = convertedTotalCost * 0.20;
-    const newGrandTotal = convertedTotalCost - discount;
+
+    const grandTotalCost = parseInt(grandTotal);
+    const discount = grandTotalCost * 0.20;
+    const newGrandTotal = grandTotalCost - discount;
+
     setElementValueById("grand-total", newGrandTotal);
     document.getElementById("coupon").classList.add("hidden");
-    //document.getElementById("coupon").className = "hidden";
+    
   } else {
     alert("Invalid Coupon");
   }
@@ -108,9 +102,8 @@ function setElementValueById(elementId, value) {
     document.getElementById(elementId).innerText = value;
   }
   function totalCost(id, value) {
-    const totalCost = document.getElementById(id).innerText;
-    const convertedTotalCost = parseInt(totalCost);
-    const sum = convertedTotalCost + parseInt(value);
+    const totalCost = parseInt(document.getElementById(id).innerText);    
+    const sum = totalCost + parseInt(value);
     setElementValueById(id, sum);
   }
   
