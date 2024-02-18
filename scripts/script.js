@@ -40,7 +40,7 @@ for (const ticketBtn of allTicketBtn) {
     setElementValueById("grand-total", parseInt(document.getElementById("total-cost").innerText));
  
 
-    //const seat = parseInt(document.getElementById("total-seats-left").innerText);
+
 
     if (totalTicketSelected > 3) {
       document.getElementById("discount-btn").removeAttribute("disabled");
