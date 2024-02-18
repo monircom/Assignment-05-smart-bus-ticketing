@@ -44,25 +44,35 @@ for (const ticketBtn of allTicketBtn) {
  
 
     //const seat = parseInt(document.getElementById("seat-count").innerText);
+
     if (totalSeats > 3) {
       document.getElementById("discount-btn").removeAttribute("disabled");
     } else {
       document.getElementById("discount-btn").setAttribute("disabled", true);
     }
 
-    document
-      .getElementById("number-phone")
-      .addEventListener("keyup", function (event) {
-        const text = event.target.value.toString().length;
-        const button = document.getElementById("modal-btn");
-        if (text > 0 && totalSeats > 0) {
-          button.removeAttribute("disabled");
-        } else {
-          button.setAttribute("disabled", true);
-        }
-      });
+    // enable Next button if number already entered
+    
+    const text = document.getElementById("phone-number").value.toString().length;
+    const button = document.getElementById("modal-btn");    
+    if (text > 0 && totalTicketSelected > 0) {
+      button.removeAttribute("disabled");
+    } else {
+      button.setAttribute("disabled", true);
+    }
+    
   });
 }
+
+document.getElementById("phone-number").addEventListener("keyup", function (event) {
+    const text = event.target.value.toString().length;
+    const button = document.getElementById("modal-btn");    
+    if (text > 0 && totalTicketSelected > 0) {
+      button.removeAttribute("disabled");
+    } else {
+      button.setAttribute("disabled", true);
+    }
+  });
 
 
 const btn2 = document.getElementById("discount-btn");
