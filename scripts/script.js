@@ -50,26 +50,31 @@ for (const ticketBtn of allTicketBtn) {
 
     // enable Next button if number already entered
     
-    const text = document.getElementById("phone-number").value.toString().length;
-    const button = document.getElementById("modal-btn");    
-    if (text > 0 && totalTicketSelected > 0) {
-      button.removeAttribute("disabled");
-    } else {
-      button.setAttribute("disabled", true);
-    }
+    phoneNumberChk();
     
   });
 }
 
 document.getElementById("phone-number").addEventListener("keyup", function (event) {
-    const text = event.target.value.toString().length;
-    const button = document.getElementById("modal-btn");    
-    if (text > 0 && totalTicketSelected > 0) {
+    
+    phoneNumberChk();
+
+  });
+
+
+function  phoneNumberChk(){
+
+  const poneVal = parseInt(document.getElementById("phone-number").value);
+  const poneText = document.getElementById("phone-number").value.toString().length;
+  
+  const button = document.getElementById("modal-btn");    
+    if ((poneText > 0) && (totalTicketSelected > 0) && (poneVal !== 0)) {
       button.removeAttribute("disabled");
     } else {
       button.setAttribute("disabled", true);
     }
-  });
+
+}
 
 
 const btn2 = document.getElementById("discount-btn");
