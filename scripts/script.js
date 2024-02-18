@@ -1,6 +1,4 @@
-
-
-let totalSeats  = 40;
+let totalSeats  = parseInt(document.getElementById("total-seats-left").innerText);;
 let totalTicketSelected = 0;
 
 const allTicketBtn = document.getElementsByClassName("add-btn");
@@ -14,11 +12,10 @@ for (const ticketBtn of allTicketBtn) {
         "total-cost",
         document.getElementById("ticket-price").innerText
       );
+      
       const placeName = e.target.innerText;
       const price = document.getElementById("ticket-price").innerText;
-      const selectedContainer = document.getElementById(
-        "selected-place-container"
-      );
+      const selectedContainer = document.getElementById("selected-place-container");
       const li = document.createElement("li");
       const p = document.createElement("p");
       p.innerText = placeName;
@@ -43,7 +40,7 @@ for (const ticketBtn of allTicketBtn) {
     setElementValueById("grand-total", parseInt(document.getElementById("total-cost").innerText));
  
 
-    //const seat = parseInt(document.getElementById("seat-count").innerText);
+    //const seat = parseInt(document.getElementById("total-seats-left").innerText);
 
     if (totalSeats > 3) {
       document.getElementById("discount-btn").removeAttribute("disabled");
@@ -111,15 +108,15 @@ btn2.addEventListener("click", function () {
 function setElementValueById(elementId, value) {
     document.getElementById(elementId).innerText = value;
   }
-  function totalCost(id, value) {
+
+function totalCost(id, value) {
     const totalCost = parseInt(document.getElementById(id).innerText);    
     const sum = totalCost + parseInt(value);
     setElementValueById(id, sum);
   }
   
-  function getInputValueById(elementId) {
-    const input = document.getElementById(elementId);
-    const inputValue = input.value;
+function getInputValueById(elementId) {
+    const inputValue = document.getElementById(elementId).value;    
     return inputValue;
   }
   
