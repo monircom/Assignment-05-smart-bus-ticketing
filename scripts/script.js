@@ -87,6 +87,20 @@ discountbtn.addEventListener("click", function () {
     const newGrandTotal = grandTotalCost - discount;
 
     setElementValueById("grand-total", newGrandTotal);
+
+    //coupon-applied
+    const selectedContainer = document.getElementById("coupon-applied");
+      const li = document.createElement("li");
+      const p = document.createElement("p");
+      p.innerText = "15% Discount ( NEW15 )";
+      p.className = "text-[#1DD100]"     
+      const p2 = document.createElement("p");
+      p2.innerText ="- " + discount;
+      li.appendChild(p);
+      li.appendChild(p2);      
+      li.className = "flex justify-between w-full text-left mb-4";
+      selectedContainer.appendChild(li);
+
     
     document.getElementById("coupon").classList.add("hidden"); 
 
@@ -99,6 +113,20 @@ discountbtn.addEventListener("click", function () {
     const newGrandTotal = grandTotalCost - discount;
 
     setElementValueById("grand-total", newGrandTotal);
+
+    //coupon-applied
+    const selectedContainer = document.getElementById("coupon-applied");
+      const li = document.createElement("li");
+      const p = document.createElement("p");
+      p.innerText = "20% Discount ( Couple 20 )"; 
+      p.className = "text-[#1DD100]" ;   
+      const p2 = document.createElement("p");      
+      p2.innerText ="- " + discount;
+      li.appendChild(p);
+      li.appendChild(p2);      
+      li.className = "flex justify-between w-full text-left mb-4";
+      selectedContainer.appendChild(li);
+
     document.getElementById("coupon").classList.add("hidden");
     
   } else {
