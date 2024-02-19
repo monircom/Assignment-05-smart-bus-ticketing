@@ -77,8 +77,8 @@ function  phoneNumberChk(){
 }
 
 
-const discountbtn = document.getElementById("discount-btn");
-discountbtn.addEventListener("click", function () {
+const discountBtn = document.getElementById("discount-btn");
+discountBtn.addEventListener("click", function () {
   const couponElement = getInputValueById("input-coupon");
   if (couponElement === "NEW15") {
     const grandTotal = document.getElementById("total-cost").innerText;
