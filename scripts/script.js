@@ -64,11 +64,11 @@ document.getElementById("phone-number").addEventListener("keyup", function (even
 
 function  phoneNumberChk(){
 
-  const poneVal = parseInt(document.getElementById("phone-number").value);
-  const poneText = document.getElementById("phone-number").value.toString().length;
+  const phoneVal = parseInt(document.getElementById("phone-number").value);
+  const phoneText = document.getElementById("phone-number").value.toString().length;
   
   const button = document.getElementById("modal-btn");    
-    if ((poneText > 0) && (totalTicketSelected > 0) && (poneVal !== 0)) {
+    if ((phoneText > 0) && (totalTicketSelected > 0) && (phoneVal !== 0)) {
       button.removeAttribute("disabled");
     } else {
       button.setAttribute("disabled", true);
@@ -77,8 +77,8 @@ function  phoneNumberChk(){
 }
 
 
-const btn2 = document.getElementById("discount-btn");
-btn2.addEventListener("click", function () {
+const discountbtn = document.getElementById("discount-btn");
+discountbtn.addEventListener("click", function () {
   const couponElement = getInputValueById("input-coupon");
   if (couponElement === "NEW15") {
     const grandTotal = document.getElementById("total-cost").innerText;
